@@ -1,0 +1,33 @@
+﻿@model TodoApp.Models.Todo
+
+<h1 class="text-light">Editar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input asp-for="Nome" class="form-control text-light bg-dark" placeholder="Nome" autocomplete="off" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="Prazo" class="control-labe text-light"></label>
+                <input asp-for="Prazo" class="form-control text-light bg-dark" autocomplete="off"/>
+                <span asp-validation-for="Prazo" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div><br />
+
+<div>
+    <a asp-action="Index" class="btn btn-success">Voltar para a tabela</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

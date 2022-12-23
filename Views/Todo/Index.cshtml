@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TodoApp.Models.Todo>
+
+<h1 class="text-light">TodoList</h1><br />
+
+<p>
+    <a asp-action="Novatarefa" class="btn btn-success">Adicionar tarefa&nbsp; <i class="fa fa-add"></i></a>
+</p><br />
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Situação</th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Prazo)
+              
+            </th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    
+                    <div class="form-check form-switch">
+                        <label for="concluida">Concluída</label>
+                        <input type="checkbox" id="concluida" class="form-check-input">
+                    </div>
+                   
+                </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            
+            <td>
+                    @Html.DisplayFor(modelItem => item.Prazo)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success "><i class="fa fa-pen-to-square"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"> <i class="fa fa-trash"></i> </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
