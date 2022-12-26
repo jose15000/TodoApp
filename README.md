@@ -2,7 +2,7 @@
 #### By _José Henrique_
 
 ## Description
-#### _A todo lis web app created using ASP.Net MVC._
+#### _A todo list web app created using ASP.Net MVC._
 
 
 ## Setup/Installation Requirements
